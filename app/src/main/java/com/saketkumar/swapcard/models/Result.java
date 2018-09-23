@@ -4,8 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Result implements Serializable {
 
@@ -21,21 +19,9 @@ public class Result implements Serializable {
     @Expose
     private String releaseDate;
 
-    @SerializedName("genre_ids")
-    @Expose
-    private List<Integer> genreIds = new ArrayList<Integer>();
-
-    @SerializedName("id")
-    @Expose
-    private Integer id;
-
     @SerializedName("original_name")
     @Expose
     private String originalTitle;
-
-    @SerializedName("original_language")
-    @Expose
-    private String originalLanguage;
 
     @SerializedName("name")
     @Expose
@@ -45,19 +31,9 @@ public class Result implements Serializable {
     @Expose
     private String backdropPath;
 
-    @SerializedName("popularity")
-    @Expose
-    private Double popularity;
-
-    @SerializedName("vote_count")
-    @Expose
-    private Integer voteCount;
-
     @SerializedName("vote_average")
     @Expose
     private Double voteAverage;
-
-
 
 
     public String getPosterPath() {
@@ -84,36 +60,12 @@ public class Result implements Serializable {
         this.releaseDate = releaseDate;
     }
 
-    public List<Integer> getGenreIds() {
-        return genreIds;
-    }
-
-    public void setGenreIds(List<Integer> genreIds) {
-        this.genreIds = genreIds;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getOriginalTitle() {
         return originalTitle;
     }
 
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
-    }
-
-    public String getOriginalLanguage() {
-        return originalLanguage;
-    }
-
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
     }
 
     public String getTitle() {
@@ -130,22 +82,6 @@ public class Result implements Serializable {
 
     public void setBackdropPath(String backdropPath) {
         this.backdropPath = backdropPath;
-    }
-
-    public Double getPopularity() {
-        return popularity;
-    }
-
-    public void setPopularity(Double popularity) {
-        this.popularity = popularity;
-    }
-
-    public Integer getVoteCount() {
-        return voteCount;
-    }
-
-    public void setVoteCount(Integer voteCount) {
-        this.voteCount = voteCount;
     }
 
     public Double getVoteAverage() {

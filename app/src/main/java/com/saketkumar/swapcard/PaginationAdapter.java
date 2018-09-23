@@ -1,6 +1,5 @@
 package com.saketkumar.swapcard;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -99,7 +98,7 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             public void onClick(View view) {
                 Context context = view.getContext();
 
-                Intent intent = new Intent(context , DetailTvShowActivity.class);
+                Intent intent = new Intent(context, DetailTvShowActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(Intent.EXTRA_TEXT, tvShowResults);
                 bundle.putInt("POSITION", holder.getAdapterPosition());

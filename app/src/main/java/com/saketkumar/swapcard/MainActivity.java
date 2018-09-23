@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import com.saketkumar.swapcard.api.TvShowApi;
 import com.saketkumar.swapcard.api.TvShowServices;
-import com.saketkumar.swapcard.models.Result;
 import com.saketkumar.swapcard.models.PopularTvShows;
+import com.saketkumar.swapcard.models.Result;
 import com.saketkumar.swapcard.utils.PaginationAdapterCallback;
 import com.saketkumar.swapcard.utils.PaginationScrollListener;
 
@@ -31,18 +31,14 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements PaginationAdapterCallback {
 
     private static final String TAG = "MainActivity";
-
+    private static final int PAGE_START = 1;
     PaginationAdapter adapter;
     LinearLayoutManager linearLayoutManager;
-
     RecyclerView rv;
     ProgressBar progressBar;
     LinearLayout errorLayout;
     Button btnRetry;
     TextView txtError;
-
-    private static final int PAGE_START = 1;
-
     private boolean isLoading = false;
     private boolean isLastPage = false;
     private int TOTAL_PAGES = 1002;
@@ -167,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements PaginationAdapter
     }
 
     private Call<PopularTvShows> callPopulartvShowssApi() {
-        return tvShowsService.getPopularTvshows (
+        return tvShowsService.getPopularTvshows(
                 getString(R.string.my_api_key),
                 "en_US",
                 currentPage

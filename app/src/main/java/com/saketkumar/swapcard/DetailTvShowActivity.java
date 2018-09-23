@@ -1,6 +1,5 @@
 package com.saketkumar.swapcard;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,7 +21,6 @@ public class DetailTvShowActivity extends AppCompatActivity {
     private static final String BASE_URL_IMG_BACKGROUND = "https://image.tmdb.org/t/p/w780";
 
 
-
     TextView title;
     TextView release;
     TextView overview;
@@ -38,7 +36,7 @@ public class DetailTvShowActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.detail_title);
         release = (TextView) findViewById(R.id.release_date);
         overview = (TextView) findViewById(R.id.detail_overview);
-        ratings =  (TextView) findViewById(R.id.ratings);
+        ratings = (TextView) findViewById(R.id.ratings);
 
         detailBackdrop = (ImageView) findViewById(R.id.detail_backdrop);
 
@@ -47,7 +45,7 @@ public class DetailTvShowActivity extends AppCompatActivity {
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
         int position = bundle.getInt("POSITION");
-        List<Result> list = (List<Result>)bundle.getSerializable(Intent.EXTRA_TEXT);
+        List<Result> list = (List<Result>) bundle.getSerializable(Intent.EXTRA_TEXT);
 
         String stitle = list.get(position).getTitle();
         String srelease = list.get(position).getReleaseDate();
@@ -61,7 +59,6 @@ public class DetailTvShowActivity extends AppCompatActivity {
 
         String sbackground = list.get(position).getBackdropPath();
 
-
         loadImage(BASE_URL_IMG + sbackdrop)
                 .into(detailBackdrop);
 
@@ -73,11 +70,6 @@ public class DetailTvShowActivity extends AppCompatActivity {
         String sratings = dratings.toString();
 
         ratings.setText(sratings + "/10");
-
-
-
-
-
 
 
     }

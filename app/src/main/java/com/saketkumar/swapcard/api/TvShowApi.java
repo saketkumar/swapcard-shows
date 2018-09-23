@@ -13,8 +13,8 @@ public class TvShowApi {
         return new OkHttpClient
                 .Builder()
                 .addInterceptor(new HttpLoggingInterceptor()
-                                        .setLevel(HttpLoggingInterceptor
-                                        .Level.BODY))
+                        .setLevel(HttpLoggingInterceptor
+                                .Level.BODY))
                 .build();
     }
 
