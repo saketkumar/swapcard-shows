@@ -1,6 +1,13 @@
 # Swapcard shows
 ![license](https://img.shields.io/badge/license-MIT%20License-blue.svg) 
 
+The goal is to prepare the app that uses https://themoviedb.org API to fetch and display the most popular TV shows. 
+
+## The main requirements are:
+
+Fetch a list of popular TV shows using the endpoint: https://developers.themoviedb.org/3/tv/get-popular-tv-shows. When users scroll to the bottom fetch the next page of shows. When a user clicks on the show it should display show’s details.
+
+
 
 # ScreenShots
 <p float="left">
