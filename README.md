@@ -21,7 +21,6 @@ Based on Test-driven development.<br>
 3. ViewModel -> ViewModel Unit Test
 4. DI & Refactoring
 5. Implmentating UI & Layouts <br><br>
-![tdd](https://user-images.githubusercontent.com/24237865/44525064-b572fb80-a71a-11e8-9930-e77cde96561f.png)
 
 ## Specs & Open-source libraries
 - Minimum SDK 14
