@@ -42,6 +42,13 @@ Based on Test-driven development.<br>
 - [Timber](https://github.com/JakeWharton/timber) for logging
 - Ripple animation, Shared element transition
 
+## Development 
+
+Add you apiKey in Strings.xml file. 
+```
+    <string name="my_api_key"></string>
+```
+
 ToDo List : 
 
 - [ ] Support Similar Tv Shows 
