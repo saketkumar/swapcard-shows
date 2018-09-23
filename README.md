@@ -52,6 +52,7 @@ Add you apiKey in Strings.xml file.
 ## ToDo List : 
 
 - [ ] Support Similar Tv Shows 
+- [ ] Move the api_key to build.gradle file for security purpose
 
 
 
