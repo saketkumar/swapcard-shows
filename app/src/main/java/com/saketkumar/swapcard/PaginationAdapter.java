@@ -1,6 +1,9 @@
 package com.saketkumar.swapcard;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +26,7 @@ import com.bumptech.glide.request.target.Target;
 import com.saketkumar.swapcard.models.Result;
 import com.saketkumar.swapcard.utils.PaginationAdapterCallback;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,8 +86,24 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         Result result = tvShowResults.get(position);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+
+                Intent intent = new Intent(context , DetailTvShowActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(Intent.EXTRA_TEXT, (Serializable) tvShowResults);
+                bundle.putInt("POSITION", getItemViewType(position));
+                intent.putExtras(bundle);
+
+                context.startActivity(intent);
+                //((Activity) context).overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
 
         switch (getItemViewType(position)) {
 

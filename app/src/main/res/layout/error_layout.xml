@@ -13,10 +13,22 @@
         android:visibility="gone"
         tools:visibility="visible">
 
+        <ImageView
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:maxWidth="142dp"
+            android:maxHeight="42dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_sentiment_dissatisfied_white_24dp"/>
+
         <TextView
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:text="@string/error_msg"/>
 
         <TextView
@@ -25,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="#fff"
             android:layout_marginTop="@dimen/activity_margin_quarter"
             tools:text="The server took too long to respond."/>
 
@@ -36,7 +49,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/activity_margin_content"
             android:text="@string/btn_retry"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="#fff"/>
 
     </LinearLayout>
 

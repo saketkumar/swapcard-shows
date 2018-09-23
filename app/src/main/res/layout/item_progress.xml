@@ -51,6 +51,7 @@
                 android:id="@+id/loadmore_errortxt"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
+                android:textColor="#fff"
                 android:layout_height="wrap_content"
                 tools:text="What went wrong"/>
 
@@ -58,6 +59,7 @@
                 style="@style/Base.TextAppearance.AppCompat.Caption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="@string/tap_to_reload"/>
 
         </LinearLayout>
