@@ -2,6 +2,18 @@
 ![license](https://img.shields.io/badge/license-MIT%20License-blue.svg) 
 
 
+# ScreenShots
+<p float="left">
+  <img width="288" src="./Screenshot_20180924-030126.jpg">
+  <img width="288" src="./Screenshot_20180924-030134.jpg">
+  <img width="288" src="./Screenshot_20180924-030141.jpg">
+  
+  <img width="288" src="./Screenshot_20180924-030150.jpg">
+  <img width="288" src="./Screenshot_20180924-030200.jpg">
+  <img width="288" src="./Screenshot_20180924-030411.jpg">
+</p>
+
+
 ## Development process
 Based on Test-driven development.<br>
 1. API Service -> API Service Unit Test with api response mock files
@@ -24,27 +36,11 @@ Based on Test-driven development.<br>
 - [Timber](https://github.com/JakeWharton/timber) for logging
 - Ripple animation, Shared element transition
 
-Check List : 
+ToDo List : 
 
-- [x] OOP concept
+- [ ] Support Similar Tv Shows 
 
-- [x] MVVM Architecture
 
-- [x] Retrofit adapter
-
-- [x] Unit tests
-
-- [x] Animations and UI feel
-
-- [x] Use a service.
-
-- [ ] Offline Support
-
-- [ ] Add More Animations
-
-- [ ] UI Changes
-
-- [ ] Support RxJava2
 
 # License
 ```xml
