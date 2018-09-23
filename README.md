@@ -24,6 +24,28 @@ Based on Test-driven development.<br>
 - [Timber](https://github.com/JakeWharton/timber) for logging
 - Ripple animation, Shared element transition
 
+Check List : 
+
+- [x] OOP concept
+
+- [x] MVVM Architecture
+
+- [x] Retrofit adapter
+
+- [x] Unit tests
+
+- [x] Animations and UI feel
+
+- [x] Use a service.
+
+- [ ] Offline Support
+
+- [ ] Add More Animations
+
+- [ ] UI Changes
+
+- [ ] Support RxJava2
+
 # License
 ```xml
 MIT License
