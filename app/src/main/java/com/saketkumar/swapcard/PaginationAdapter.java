@@ -26,7 +26,6 @@ import com.bumptech.glide.request.target.Target;
 import com.saketkumar.swapcard.models.Result;
 import com.saketkumar.swapcard.utils.PaginationAdapterCallback;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +37,10 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private static final int HERO = 2;
 
     private static final String BASE_URL_IMG = "https://image.tmdb.org/t/p/w300";
+    private static final String BASE_URL_IMG_BACKGROUND = "https://image.tmdb.org/t/p/w780";
 
-    private List<Result> tvShowResults;
+
+    private ArrayList<Result> tvShowResults;
     private Context context;
 
     private boolean isLoadingAdded = false;
@@ -55,11 +56,15 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         tvShowResults = new ArrayList<>();
     }
 
-    public List<Result> getTvShows() {
+    public PaginationAdapter(ArrayList<Result> tvShowResults) {
+        this.tvShowResults = tvShowResults;
+    }
+
+    public ArrayList<Result> getTvShows() {
         return tvShowResults;
     }
 
-    public void setTvShows(List<Result> tvShowResults) {
+    public void setTvShows(ArrayList<Result> tvShowResults) {
         this.tvShowResults = tvShowResults;
     }
 
@@ -86,8 +91,8 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        Result result = tvShowResults.get(position);
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
+        final Result result = tvShowResults.get(position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,8 +101,8 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
                 Intent intent = new Intent(context , DetailTvShowActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable(Intent.EXTRA_TEXT, (Serializable) tvShowResults);
-                bundle.putInt("POSITION", getItemViewType(position));
+                bundle.putSerializable(Intent.EXTRA_TEXT, tvShowResults);
+                bundle.putInt("POSITION", holder.getAdapterPosition());
                 intent.putExtras(bundle);
 
                 context.startActivity(intent);
@@ -113,8 +118,24 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 heroVh.mTvShowTitle.setText(result.getTitle());
                 heroVh.mTvShowDesc.setText(result.getOverview());
 
-                loadImage(result.getBackdropPath())
+                loadImage(BASE_URL_IMG_BACKGROUND + result.getBackdropPath())
                         .into(heroVh.mPosterImg);
+
+//                heroVh.itemView.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Context context = view.getContext();
+//
+//                        Intent intent = new Intent(context , DetailTvShowActivity.class);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putSerializable(Intent.EXTRA_TEXT, tvShowResults);
+//                        bundle.putInt("POSITION",position);
+//                        intent.putExtras(bundle);
+//
+//                        context.startActivity(intent);
+//
+//                    }
+//                });
                 break;
 
             case ITEM:
@@ -124,7 +145,7 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 tvShowsViewHolder.mTvShowDesc.setText(result.getOverview());
 
                 GlideDrawableImageViewTarget imageViewPreview = new GlideDrawableImageViewTarget(tvShowsViewHolder.mPosterImg);
-                loadImage(result.getPosterPath())
+                loadImage(BASE_URL_IMG + result.getPosterPath())
                         .listener(new RequestListener<String, GlideDrawable>() {
                             @Override
                             public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
@@ -178,7 +199,7 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private DrawableRequestBuilder<String> loadImage(@NonNull String posterPath) {
         return Glide
                 .with(context)
-                .load(BASE_URL_IMG + posterPath)
+                .load(posterPath)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)   // cache both original & resized image
                 .centerCrop()
                 .crossFade();

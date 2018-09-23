@@ -3,10 +3,11 @@ package com.saketkumar.swapcard.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Result {
+public class Result implements Serializable {
 
     @SerializedName("poster_path")
     @Expose
@@ -16,7 +17,7 @@ public class Result {
     @Expose
     private String overview;
 
-    @SerializedName("release_date")
+    @SerializedName("first_air_date")
     @Expose
     private String releaseDate;
 
@@ -55,6 +56,8 @@ public class Result {
     @SerializedName("vote_average")
     @Expose
     private Double voteAverage;
+
+
 
 
     public String getPosterPath() {
